@@ -2,4 +2,4 @@
 
 to run:
 
-#### `yarn && yarn start`
+#### `yarn && yarn run start`
