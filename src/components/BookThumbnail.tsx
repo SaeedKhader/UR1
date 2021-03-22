@@ -18,12 +18,16 @@ class BookThumbnail extends React.Component<Props> {
         className='relative w-56 py-4 mt-16 transition-transform transform group bg-gradient-to-t from-white to-gray-50 rounded-2xl hover:scale-105'
         style={{ boxShadow: '0px 10px 10px 0px rgba(50, 50, 50, 0.02)' }}>
         <div className='relative'>
-          <img
-            className='mx-auto -mt-16 rounded-md h-36 '
-            src={book.imageLinks?.smallThumbnail}
-            alt={book.title}
-            style={{ boxShadow: '0px 6px 6px 0px rgba(50, 50, 50, 0.1)' }}
-          />
+          {book.imageLinks ? (
+            <img
+              className='mx-auto -mt-16 rounded-md h-36 '
+              src={book.imageLinks.smallThumbnail}
+              alt={book.title}
+              style={{ boxShadow: '0px 6px 6px 0px rgba(50, 50, 50, 0.1)' }}
+            />
+          ) : (
+            <div className='w-24 mx-auto -mt-16 bg-gray-300 rounded-md h-36' />
+          )}
           <Action
             title='Delete'
             shelf={Shelf.none}
@@ -36,10 +40,21 @@ class BookThumbnail extends React.Component<Props> {
           {book.title}
         </h4>
         <p className='px-4 mb-2 text-sm text-center text-gray-500'>
-          {book.authors[0]}
+          {book.authors && this.authers(book.authors)}
         </p>
         <ActionsContainer book={book} showAllAction={false} />
       </div>
+    )
+  }
+
+  authers = (authors: string[]) => {
+    return (
+      <p className='text-sm text-gray-500 truncate'>
+        {authors.map(
+          (a, i) =>
+            `${a}${authors.length > 1 && i + 1 !== authors.length ? ', ' : ''}`
+        )}
+      </p>
     )
   }
 }

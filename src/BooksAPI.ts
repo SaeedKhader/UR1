@@ -64,7 +64,7 @@ interface ImageLinks {
 export interface Book {
   title: string
   subtitle: string
-  authors: string[]
+  authors?: string[]
   publisher: string
   publishedDate: string
   description: string
