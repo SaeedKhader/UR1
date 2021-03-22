@@ -1,3 +1,5 @@
-run:
+### MyReads: A Book Lending App
 
-### `yarn && yarn start`
+to run:
+
+# `yarn && yarn start`
