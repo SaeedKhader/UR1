@@ -1,5 +1,5 @@
-### MyReads: A Book Lending App
+## MyReads: A Book Lending App
 
 to run:
 
-# `yarn && yarn start`
+#### `yarn && yarn start`
