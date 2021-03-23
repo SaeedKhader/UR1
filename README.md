@@ -2,4 +2,4 @@
 
 to run:
 
-#### `yarn && yarn run start`
+#### `npm install && npm run start`
